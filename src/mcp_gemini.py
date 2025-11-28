@@ -3,6 +3,11 @@ MCP REAL com Google Gemini - Análise inteligente do banco de dados
 Sistema que integra LLM (Google Gemini) com banco de dados para análise de dados
 em linguagem natural.
 """
+
+import warnings
+# Suprime os warnings do Google API
+warnings.filterwarnings("ignore", category=FutureWarning, module="google.api_core")
+
 import google.generativeai as genai
 from database import DatabaseConnection
 import pandas as pd
